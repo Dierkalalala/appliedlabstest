@@ -7,7 +7,7 @@
         "settings": {
           "align_logo": "left",
           "logo": "shopify:\/\/shop_images\/logo.png",
-          "logo_max_width": 100,
+          "logo_max_width": 215,
           "main_linklist": "main-menu",
           "message": true,
           "home_page_only": true,
@@ -21,13 +21,14 @@
       "hero-1": {
         "type": "hero",
         "settings": {
+          "image": "shopify:\/\/shop_images\/image-with-text-overlay-bg.jpg",
           "alignment": "center",
           "hero_layout": "full_width",
           "hero_size": "large",
           "text_size": "large",
-          "title": "Image with text overlay",
-          "text": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<\/p>",
-          "button_label": "",
+          "title": "Team barbell",
+          "text": "<p>Team Barbell was to design a piece of equipment that matches the performance and quality of other elite level competition bars.<\/p>",
+          "button_label": "Explore",
           "button_link": ""
         }
       },
