@@ -14,7 +14,8 @@
           "message_text": "20% OFF Sitewide until 9\/12",
           "message_link": "",
           "color_bg": "#fbfbfb",
-          "color_text": "#ffffff"
+          "color_text": "#ffffff",
+          "menu_color": "#ffffff"
         }
       },
       "hero-1": {
