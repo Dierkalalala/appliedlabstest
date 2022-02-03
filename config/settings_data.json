@@ -24,7 +24,7 @@
           "image": "shopify:\/\/shop_images\/image-with-text-overlay-bg.jpg",
           "alignment": "center",
           "hero_layout": "full_width",
-          "hero_size": "large",
+          "hero_size": "x-large",
           "text_size": "large",
           "title": "Team barbell",
           "text": "<p>Team Barbell was to design a piece of equipment that matches the performance and quality of other elite level competition bars.<\/p>",
