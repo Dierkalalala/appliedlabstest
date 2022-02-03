@@ -1196,7 +1196,7 @@ h4,
 .h4 {
   font-size: calc(((var(--font-h4-desktop)) / (var(--font-size-base))) * 1em); }
   @media only screen and (max-width: 749px) {
-    
+
     h4,
     .h4 {
       font-size: calc(((var(--font-h4-mobile)) / (var(--font-size-base))) * 1em); } }
@@ -1206,7 +1206,7 @@ h5,
 .h5 {
   font-size: calc(((var(--font-h5-desktop)) / (var(--font-size-base))) * 1em); }
   @media only screen and (max-width: 749px) {
-    
+
     h5,
     .h5 {
       font-size: calc(((var(--font-h5-mobile)) / (var(--font-size-base))) * 1em); } }
@@ -1216,7 +1216,7 @@ h6,
 .h6 {
   font-size: calc(((var(--font-h6-desktop)) / (var(--font-size-base))) * 1em); }
   @media only screen and (max-width: 749px) {
-    
+
     h6,
     .h6 {
       font-size: calc(((var(--font-h6-mobile)) / (var(--font-size-base))) * 1em); } }
@@ -1796,7 +1796,7 @@ select,
   padding-left: 15px;
   padding-bottom: 8px; }
   @media only screen and (min-width: 750px) {
-    
+
     select,
     .disclosure__toggle {
       padding-top: 10px;
@@ -2000,7 +2000,7 @@ textarea {
 
 .input-group__btn {
   flex-grow: 1; }
-  
+
   .input-group__btn .btn,
   .input-group__btn .shopify-payment-button .shopify-payment-button__button--unbranded,
   .shopify-payment-button .input-group__btn .shopify-payment-button__button--unbranded {
@@ -4820,7 +4820,7 @@ hr {
 .site-header__mobile-nav {
   z-index: 11;
   position: relative;
-  background-color: var(--color-body); }
+  background-color: transparent; }
   @media only screen and (max-width: 749px) {
     .site-header__mobile-nav {
       display: -webkit-flex;
@@ -5833,7 +5833,7 @@ hr {
   .hero--large {
     height: 650px; }
   .hero--x-large {
-    height: 775px; } }
+    height: 1024px; } }
 
 .hero__overlay::before {
   content: '';
@@ -5844,7 +5844,9 @@ hr {
   left: 0;
   background-color: var(--color-image-overlay);
   opacity: var(--opacity-image-overlay);
-  z-index: 1; }
+  z-index: 1;
+  display: none;
+}
 
 .hero__inner {
   position: relative;
