@@ -190,6 +190,8 @@
     }
   </script>
 
+  {{ 'css/main.scss.css' | asset_url | stylesheet_tag }}
+
   {{ content_for_header }}
 </head>
 
@@ -224,6 +226,8 @@
       "cartChangeUrl": "{{ routes.cart_change_url }}"
     }
   </script>
+
+  {{ 'js/main.js' | asset_url | script_tag }}
 
   <ul hidden>
     <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
