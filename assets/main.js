@@ -21,4 +21,5 @@ const swiper = new Swiper('.featured__swiper-products', {
             slidesPerView: 4,
             spaceBetween: 16
         }
+    }
 });
