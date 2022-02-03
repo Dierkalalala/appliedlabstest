@@ -49,6 +49,7 @@
             "type": "text_block",
             "settings": {
               "enable_image": true,
+              "image": "shopify:\/\/shop_images\/image-with-text-overlay-bg.jpg",
               "title": "Bumper plates",
               "text": "",
               "button_label": "",
