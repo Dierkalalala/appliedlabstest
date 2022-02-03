@@ -44,10 +44,6 @@
           font-size: 12px;
           line-height: 168%;
         }
-
-        .site-nav a{
-          color: {{ section.settings.menu_color }};
-        }
       </style>
 
       <div class="announcement-bar" role="region" aria-label="{{ 'sections.header.announcement_bar_label' | t }}">
@@ -286,6 +282,18 @@
   "url": {{ shop.url | append: page.url | json }}
 }
 </script>
+
+<style>
+  .site-nav a{
+    color: {{ section.settings.menu_color }};
+  }
+  .site-nav__link--active .site-nav__label {
+    color: {{ section.settings.menu_color }};
+  }
+  .site-header__icons-wrapper svg {
+    fill: {{ section.settings.menu_color }};
+  }
+</style>
 
 {% if request.page_type == 'index' %}
   {% assign potential_action_target = shop.url | append: routes.search_url | append: "?q={search_term_string}" %}
