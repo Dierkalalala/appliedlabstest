@@ -5851,7 +5851,7 @@ hr {
 .hero__inner {
   position: relative;
   display: table-cell;
-  vertical-align: middle;
+  vertical-align: bottom;
   padding: 55px 0;
   z-index: 2; }
 
