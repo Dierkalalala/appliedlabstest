@@ -20,12 +20,18 @@
         {%- assign max_height = 530 -%}
     {% endcase %}
     {% for block in section.blocks %}
+    <div class="featured-row__grid-item">
+      {% render 'product' %}
+    </div>
+    {% endfor %}
+    {% comment %}{% for block in section.blocks %}
       {% if section.blocks.size == 5 and forloop.index < 3 %}
         {%- assign column_width = 'medium-up--one-half' -%}
         {%- assign max_height = 530 -%}
       {% else %}
         {%- assign column_width = grid_item_width -%}
       {% endif %}
+
       <div class="grid__item {{ column_width }} text-{{ section.settings.align_text }}" {{ block.shopify_attributes }}>
         {% if block.settings.enable_image %}
           {% if block.settings.image != blank %}
@@ -81,7 +87,7 @@
           </a>
         {% endif %}
       </div>
-    {% endfor %}
+    {% endfor %}{% endcomment %}
   </div>
 
   {% if section.blocks.size == 0 %}
