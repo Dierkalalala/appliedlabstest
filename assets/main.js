@@ -22,4 +22,4 @@ const swiper = new Swiper('.featured__swiper-products', {
             spaceBetween: 16
         }
     }
-});
+})
