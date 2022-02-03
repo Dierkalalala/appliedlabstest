@@ -21,6 +21,7 @@
       "hero-1": {
         "type": "hero",
         "settings": {
+          "image": "shopify:\/\/shop_images\/image-with-text-overlay-bg.jpg",
           "alignment": "center",
           "hero_layout": "full_width",
           "hero_size": "large",
