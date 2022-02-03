@@ -4,13 +4,23 @@
       <h2>{{ section.settings.title | escape }}</h2>
     </div>
   {% endif %}
-
-  <div class="d-flex">
-    {% for block in section.blocks %}
-    <div class="featured-row__grid-item">
-      {% render 'product', block: block %}
+  <!-- Slider main container -->
+  <div class="swiper featured__swiper-products">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      {% for block in section.blocks %}
+        <div class="swiper-slide">
+          {% render 'product', block: block %}
+        </div>
+      {% endfor %}
     </div>
-    {% endfor %}
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+ {% comment %} <div class="d-flex">
+
     {% comment %}{% for block in section.blocks %}
       {% if section.blocks.size == 5 and forloop.index < 3 %}
         {%- assign column_width = 'medium-up--one-half' -%}
@@ -75,7 +85,7 @@
         {% endif %}
       </div>
     {% endfor %}{% endcomment %}
-  </div>
+  </div>{% endcomment %}
 
   {% if section.blocks.size == 0 %}
     {% include 'no-blocks' %}
