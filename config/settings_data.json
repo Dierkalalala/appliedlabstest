@@ -213,8 +213,8 @@
     },
     "content_for_index": [
       "hero-1",
-      "feature-row",
       "feature-columns",
+      "feature-row",
       "collection",
       "hero-2",
       "quotes",
