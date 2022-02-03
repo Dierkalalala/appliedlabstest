@@ -38,6 +38,11 @@
 
         .announcement-bar__message {
           color: {{ section.settings.color_text }};
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          font-weight: 300;
+          font-size: 12px;
+          line-height: 168%;
         }
       </style>
 
@@ -542,7 +547,7 @@
         "zh-CN": "显示公告",
         "zh-TW": "顯示公告"
       },
-      "default": false
+      "default": true
     },
     {
       "type": "checkbox",
@@ -726,7 +731,7 @@
         "zh-CN": "文本",
         "zh-TW": "文字"
       },
-      "default": "#ffffff"
+      "default": "#000000"
     }
   ]
 }
