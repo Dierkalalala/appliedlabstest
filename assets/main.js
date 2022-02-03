@@ -1,5 +1,6 @@
 console.log('hello world')
 const swiper = new Swiper('.featured__swiper-products', {
+    slidesPerView: 4,
     // And if we need scrollbar
     scrollbar: {
         el: '.swiper-scrollbar',
