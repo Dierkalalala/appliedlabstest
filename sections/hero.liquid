@@ -110,6 +110,9 @@
                   class="btn hero__btn"
                   aria-label="{{ ariaLabel }}">
                   {{- section.settings.button_label | escape -}}
+                    <span class="hero__btn-arrow">
+                        <img src="{{ 'img/arrow.svg' | asset_url }}" alt="arrow">
+                    </span>
                 </a>
               {%- endif -%}
             </div>
