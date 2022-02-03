@@ -93,6 +93,7 @@
             "type": "text_block",
             "settings": {
               "enable_image": true,
+              "image": "shopify:\/\/shop_images\/image-with-text-overlay-bg.jpg",
               "title": "Add a title or tagline",
               "text": "",
               "button_label": "",
@@ -103,8 +104,9 @@
             "type": "text_block",
             "settings": {
               "enable_image": true,
+              "image": "shopify:\/\/shop_images\/image-with-text-overlay-bg.jpg",
               "title": "Add a title or tagline",
-              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+              "text": "",
               "button_label": "",
               "button_link": ""
             }
