@@ -199,8 +199,10 @@
                         <span class="site-footer__newsletter-error">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
                       </span>
                     {% endif %}
+
+                    {% render 'social-media-links' %}
                   {% endform %}
-                  {% render 'social-media-links' %}
+
 
                 </div>
 
