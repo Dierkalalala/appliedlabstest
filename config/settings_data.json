@@ -238,6 +238,12 @@
       "footer": {
         "type": "footer",
         "blocks": {
+          "footer-1": {
+            "type": "newsletter",
+            "settings": {
+              "title": "Newsletter"
+            }
+          },
           "footer-0": {
             "type": "link_list",
             "settings": {
@@ -245,16 +251,18 @@
               "menu": "footer"
             }
           },
-          "footer-1": {
-            "type": "newsletter",
+          "7f689337-4131-4f55-8228-e72c68eaa5ef": {
+            "type": "link_list",
             "settings": {
-              "title": "Newsletter"
+              "title": "Quick links",
+              "menu": "footer"
             }
           }
         },
         "block_order": [
+          "footer-1",
           "footer-0",
-          "footer-1"
+          "7f689337-4131-4f55-8228-e72c68eaa5ef"
         ],
         "settings": {
           "show_payment_icons": true,
