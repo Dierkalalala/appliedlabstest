@@ -255,7 +255,7 @@
             "type": "link_list",
             "settings": {
               "title": "Again faster",
-              "menu": "footer"
+              "menu": "footer-again-faster-menu"
             }
           },
           "7f689337-4131-4f55-8228-e72c68eaa5ef": {
