@@ -2,6 +2,7 @@
   "current": {
     "type_header_font": "oswald_n4",
     "type_base_font": "open_sans_n4",
+    "social_envelope_link": "dierkholm@gmail.com",
     "social_facebook_link": "https:\/\/www.facebook.com\/profile.php?id=100077458680889",
     "social_instagram_link": "https:\/\/www.instagram.com\/kun.uz\/",
     "sections": {
@@ -271,7 +272,8 @@
           "color_footer_bg": "#f1f1f1",
           "color_footer_text": "#333232",
           "show_currency_selector": true,
-          "show_locale_selector": true
+          "show_locale_selector": true,
+          "copyright": "© 2020 Again Faster. All Rights Reserved"
         }
       }
     },
