@@ -36,11 +36,13 @@
       "feature-row": {
         "type": "feature-row",
         "settings": {
-          "layout": "left",
-          "title": "Image with text",
-          "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-          "button_label": "",
-          "button_link": ""
+          "big_image": "shopify:\/\/shop_images\/image-with-text-overlay-bg.jpg",
+          "small_image": "shopify:\/\/shop_images\/image-with-text-overlay-bg.jpg",
+          "title": "TRULY, AN ALL IN ONE BARBELL",
+          "sub_title": "Best seller",
+          "text": "<p>Design that matches the performance and quality of other elite level competition bars<\/p>",
+          "button_label": "Shop weights",
+          "button_link": "shopify:\/\/collections\/all"
         }
       },
       "feature-columns": {
