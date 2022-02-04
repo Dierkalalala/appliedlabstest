@@ -145,6 +145,7 @@
       },
       "collection": {
         "type": "collection",
+        "disabled": true,
         "settings": {
           "title": "Featured collection",
           "collection": "",
@@ -156,6 +157,7 @@
       },
       "hero-2": {
         "type": "hero",
+        "disabled": true,
         "settings": {
           "alignment": "center",
           "hero_layout": "full_width",
@@ -169,6 +171,7 @@
       },
       "quotes": {
         "type": "quotes",
+        "disabled": true,
         "blocks": {
           "quotes-0": {
             "type": "quote",
@@ -203,6 +206,7 @@
       },
       "image-bar": {
         "type": "image-bar",
+        "disabled": true,
         "blocks": {
           "image-bar-0": {
             "type": "image",
@@ -250,8 +254,8 @@
           "footer-0": {
             "type": "link_list",
             "settings": {
-              "title": "Quick links",
-              "menu": "footer"
+              "title": "Again faster",
+              "menu": "footer-again-faster-menu"
             }
           },
           "7f689337-4131-4f55-8228-e72c68eaa5ef": {
