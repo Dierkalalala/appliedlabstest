@@ -7,7 +7,7 @@
   {{ collection.metafields | json}}
   {% assign products_collection = collection.metafields.promoted_products.products | split: '|' %}
   {% for colection_product in products_collection %} 
-  	{{colection_product | json}}
+  	{{ colection_product | json }}
   {% endfor %}
   <!-- Slider main container -->
   <div class="swiper featured__swiper-products">
