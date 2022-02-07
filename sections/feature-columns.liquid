@@ -10,9 +10,7 @@
     <div class="swiper-wrapper">
       <!-- Slides -->
       {%- assign collection = collections[section.settings.collection] -%}
-      {{ collections | json }}
-      {{ collection.products | json }}
-      {% for product in collection.products %}
+      {% for product in collections %}
         {{ product | json }}
       {% endfor %}
       {% comment %}{% for block in section.blocks %}
