@@ -12,12 +12,12 @@
       {%- assign collection = collections[section.settings.collection] -%}
       {% for product in collection.products %}
         {{ product | json }}
-      {% else %}
-      {% for block in section.blocks %}
+      {% endfor %}
+      {% comment %}{% for block in section.blocks %}
         <div class="swiper-slide">
           {% comment %}{% render 'product', block: block %}{% endcomment %}
         </div>
-      {% endfor %}
+      {% endfor %}{% endcomment %}
     </div>
 
     <!-- If we need scrollbar -->
@@ -63,18 +63,7 @@
       },
       "category": {
         "en": "Text"
-      },
-      "blocks": [
-        {
-          "type": "text_block"
-        },
-        {
-          "type": "text_block"
-        },
-        {
-          "type": "text_block"
-        }
-      ]
+      }
     }
   ]
 }
