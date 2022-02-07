@@ -4,7 +4,10 @@
       <h2>{{ section.settings.title | escape }}</h2>
     </div>
   {% endif %}
-  {{ collection.metafields.promoted_products.products }}
+  {% assign products_collection = collection.metafields.promoted_products.products %}
+  {% for colection_product in products_collection %} 
+  	{{colection_product}}
+  {% endfor %}
   <!-- Slider main container -->
   <div class="swiper featured__swiper-products">
     <!-- Additional required wrapper -->
