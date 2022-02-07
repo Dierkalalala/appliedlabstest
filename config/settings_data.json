@@ -52,7 +52,7 @@
         "type": "feature-columns",
         "settings": {
           "title": "",
-          "collection": ""
+          "collection": "featured_products"
         }
       },
       "collection": {
