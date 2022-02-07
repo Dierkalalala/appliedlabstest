@@ -57,10 +57,9 @@
       },
       "collection": {
         "type": "collection",
-        "disabled": true,
         "settings": {
           "title": "Featured collection",
-          "collection": "",
+          "collection": "featured_products",
           "grid": 4,
           "rows": 2,
           "show_vendor": false,
