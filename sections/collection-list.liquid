@@ -15,7 +15,7 @@
     {% when 5 %}
       {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
   {% endcase %}
-  {{ collection.metafields.promoted_products.products }}
+  {{ all_products }}
   <div class="collection-grid">
     <ul class="grid grid--uniform">
       {% for block in section.blocks limit: section.blocks.size %}
