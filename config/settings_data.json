@@ -225,28 +225,6 @@
         },
         "feature-columns": {
           "type": "feature-columns",
-          "blocks": {
-            "feature-columns-0": {
-              "type": "text_block",
-              "settings": {
-              }
-            },
-            "feature-columns-1": {
-              "type": "text_block",
-              "settings": {
-              }
-            },
-            "feature-columns-2": {
-              "type": "text_block",
-              "settings": {
-              }
-            }
-          },
-          "block_order": [
-            "feature-columns-0",
-            "feature-columns-1",
-            "feature-columns-2"
-          ],
           "settings": {
             "title": ""
           }
