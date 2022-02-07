@@ -50,97 +50,10 @@
       },
       "feature-columns": {
         "type": "feature-columns",
-        "blocks": {
-          "feature-columns-0": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": true,
-              "image": "shopify:\/\/shop_images\/image-with-text-overlay-bg.jpg",
-              "title": "Bumper plates",
-              "text": "",
-              "button_label": "",
-              "button_link": ""
-            }
-          },
-          "feature-columns-1": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": true,
-              "image": "shopify:\/\/shop_images\/image-with-text-overlay-bg.jpg",
-              "title": "Squat racks",
-              "text": "",
-              "button_label": "",
-              "button_link": ""
-            }
-          },
-          "feature-columns-2": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": true,
-              "image": "shopify:\/\/shop_images\/image-with-text-overlay-bg.jpg",
-              "title": "Add a title or tagline",
-              "text": "<p>Garage package<\/p>",
-              "button_label": "",
-              "button_link": ""
-            }
-          },
-          "21806766-b0df-426b-87ed-4493c50a02eb": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": true,
-              "image": "shopify:\/\/shop_images\/image-with-text-overlay-bg.jpg",
-              "title": "Add a title or tagline",
-              "text": "",
-              "button_label": "",
-              "button_link": ""
-            }
-          },
-          "9d1b342a-cb7a-43a7-8def-20eb616f62ee": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": true,
-              "image": "shopify:\/\/shop_images\/image-with-text-overlay-bg.jpg",
-              "title": "Add a title or tagline",
-              "text": "",
-              "button_label": "",
-              "button_link": ""
-            }
-          },
-          "4f4ff76c-be2b-4eee-badf-f78f5b33d191": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": true,
-              "image": "shopify:\/\/shop_images\/image-with-text-overlay-bg.jpg",
-              "title": "Add a title or tagline",
-              "text": "",
-              "button_label": "",
-              "button_link": ""
-            }
-          },
-          "d51b322c-808f-4678-8f04-32996ea3832b": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": true,
-              "image": "shopify:\/\/shop_images\/image-with-text-overlay-bg.jpg",
-              "title": "Add a title or tagline",
-              "text": "",
-              "button_label": "",
-              "button_link": ""
-            }
-          }
-        },
-        "block_order": [
-          "feature-columns-0",
-          "feature-columns-1",
-          "feature-columns-2",
-          "21806766-b0df-426b-87ed-4493c50a02eb",
-          "9d1b342a-cb7a-43a7-8def-20eb616f62ee",
-          "4f4ff76c-be2b-4eee-badf-f78f5b33d191",
-          "d51b322c-808f-4678-8f04-32996ea3832b"
-        ],
         "settings": {
           "title": "",
-          "align_text": "left"
+          "align_text": "left",
+          "collection": ""
         }
       },
       "collection": {
