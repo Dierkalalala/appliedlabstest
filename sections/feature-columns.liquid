@@ -4,7 +4,7 @@
       <h2>{{ section.settings.title | escape }}</h2>
     </div>
   {% endif %}
-  {{ collection }}
+  {{ collection | json}}
   {% assign products_collection = collection.metafields.promoted_products.products | split: '|' %}
   {% for colection_product in products_collection %} 
   	{{colection_product | json}}
