@@ -12,7 +12,7 @@
       {%- assign collection = collections[section.settings.collection] -%}
       {{ collection.products | json }}
       {% for product in collections %}
-        {{ product | json }}
+        {% comment %}{{ product | json }}{% endcomment %}
       {% endfor %}
       {% comment %}{% for block in section.blocks %}
         <div class="swiper-slide">
