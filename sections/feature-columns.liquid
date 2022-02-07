@@ -9,7 +9,7 @@
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
-      {{ section.settings.collection | json }}
+      {{ collections[section.settings.collection] | json }}
       {%- assign collection = collections[section.settings.collection] -%}
       {% comment %}{{ collection.featured_products | json }}{% endcomment %}
       {% for product in collections %}
