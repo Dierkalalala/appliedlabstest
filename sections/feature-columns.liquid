@@ -1,62 +1,62 @@
 <div class="page-width">
-  {% if section.settings.title != blank %}
-    <div class="section-header text-center">
-      <h2>{{ section.settings.title | escape }}</h2>
-    </div>
-  {% endif %}
-  <!-- Slider main container -->
-  <div class="swiper featured__swiper-products">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      {%- assign featured_products = collections[section.settings.collection].products -%}
-      {% for product in featured_products %}
-        {{ product.media }}
-        {% render 'product', product: product %}
-      {% endfor %}
-    </div>
+    {% if section.settings.title != blank %}
+        <div class="section-header text-center">
+            <h2>{{ section.settings.title | escape }}</h2>
+        </div>
+    {% endif %}
+    <!-- Slider main container -->
+    <div class="swiper featured__swiper-products">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                {%- assign featured_products = collections[section.settings.collection].products -%}
+                {% for product in featured_products %}
+                    {% render 'product', product: product %}
+                {% endfor %}
+            </div>
+        </div>
 
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
-  </div>
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
 </div>
-
 
 
 {% schema %}
 {
-  "name": {
-    "en": "Text columns with images"
-  },
-  "class": "index-section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": {
-        "en": "Heading"
-      },
-      "default": {
-        "en": "Text columns with images"
-      }
-    },
-    {
-      "id": "collection",
-      "type": "collection",
-      "label": {
-        "en": "Collection"
-      }
-    }
-  ],
-  "presets": [
-    {
-      "name": {
-        "en": "Text columns with images"
-      },
-      "category": {
-        "en": "Text"
-      }
-    }
-  ]
+"name": {
+"en": "Text columns with images"
+},
+"class": "index-section",
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": {
+"en": "Heading"
+},
+"default": {
+"en": "Text columns with images"
+}
+},
+{
+"id": "collection",
+"type": "collection",
+"label": {
+"en": "Collection"
+}
+}
+],
+"presets": [
+{
+"name": {
+"en": "Text columns with images"
+},
+"category": {
+"en": "Text"
+}
+}
+]
 }
 {% endschema %}
