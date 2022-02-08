@@ -1,6 +1,6 @@
 <div class="container">
     <div class="featured__page-wrapper container">
-        <div class="featured__page-hero">
+        <div class="featured__page-hero d-flex">
             <div class="featured__page-hero-textbox">
                 <div class="featured__page-hero-eyebrow">
                     {{ collection.metafields.description.eyebrow }}
@@ -9,7 +9,7 @@
                    {{ collection.metafields.description.title }}
                 </h1>
                 <a href="{{ collection.metafields.description.cta_url }}"
-                   class="btn hero__btn"
+                   class="btn hero__btn featured__page-collection-hero-btn"
                 >
                     {{ collection.metafields.description.cta_label }}
                     <span class="hero__btn-arrow">
