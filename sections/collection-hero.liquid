@@ -3,19 +3,33 @@
         <div class="featured__page-hero d-flex">
             <div class="featured__page-hero-textbox">
                 <div class="featured__page-hero-eyebrow">
-                    {{ collection.metafields.description.eyebrow }}
+                    {% if collection.metafields.description.eyebrow %}
+                        {{ collection.metafields.description.eyebrow }}
+                    {% else %}
+                        Check out our collection
+                    {% endif %}
+
                 </div>
                 <h1 class="featured__page-hero-title">
-                   {{ collection.metafields.description.title }}
+                    {% if collection.metafields.description.title %}
+                        {{ collection.metafields.description.title }}
+                    {% else %}
+                        the best collections ever which you have ever seen
+                    {% endif %}
                 </h1>
-                <a href="{{ collection.metafields.description.cta_url }}"
-                   class="btn hero__btn featured__page-collection-hero-btn"
-                >
-                    {{ collection.metafields.description.cta_label }}
-                    <span class="hero__btn-arrow">
+                {% if collection.metafields.description.cta_url and collection.metafields.description.cta_label %}
+                    <a href="{{ collection.metafields.description.cta_url }}"
+                       class="btn hero__btn featured__page-collection-hero-btn"
+                    >
+                        {{ collection.metafields.description.cta_label }}
+                        <span class="hero__btn-arrow">
                         <img src="{{ 'b-arrow.svg' | asset_url }}" alt="arrow">
                     </span>
-                </a>
+                    </a>
+                {% else %}
+                    the best collections ever which you have ever seen
+                {% endif %}
+
             </div>
             <div class="featured__page-imagebox">
                 <div class="featured__page-main-img-wrap">
