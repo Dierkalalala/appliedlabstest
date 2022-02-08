@@ -1,4 +1,4 @@
-<div class="product-card">
+<a href="{{ product.url }}" class="product-card d-block">
     <div class="product-card--image">
         {%- assign img_url = product.featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
         <img class="feature-row__image lazyload"
@@ -16,4 +16,4 @@
             </span>
         </h3>
     </div>
-</div>
+</a>
