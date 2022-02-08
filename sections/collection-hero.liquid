@@ -19,10 +19,12 @@
             </div>
             <div class="featured__page-imagebox">
                 <div class="featured__page-main-img-wrap">
-                    <img src="{{ collection.metafields.description.image_1.cloudinary_src }}" alt="">
+                    {% assign imgObject = collection.metafields.description.image_1 | first %}
+                    <img src="{{ imgObject.cloudinary_src }}" alt="">
                 </div>
                 <div class="featured__page-preview">
-                    <img src="{{ collection.metafields.description.image_2.cloudinary_src }}" alt="">
+                    {% assign secondImgObject = collection.metafields.description.image_1 | first %}
+                    <img src="{{ secondImgObject.cloudinary_src }}" alt="">
                 </div>
             </div>
         </div>

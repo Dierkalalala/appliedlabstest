@@ -1,9 +1,7 @@
 <div class="page-width">
     <div class="collection__page-content">
         <div class="collection__page-items">
-
             {% assign products = collections[collection.metafields.allproducts.products].products %}
-            {{ products | json }}
             {% for product in products %}
                 <li class="list-view-item">
                     {% include 'product-card-list', product: product %}
