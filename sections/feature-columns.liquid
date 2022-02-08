@@ -12,6 +12,7 @@
             <div class="swiper-slide">
                 {%- assign featured_products = collections[section.settings.collection].products -%}
                 {% for product in featured_products %}
+                    {{ product.media }}
                     {% render 'product', product: product %}
                 {% endfor %}
             </div>
