@@ -1,2 +1,31 @@
-{{ collection.metafields.description | json }}
+<div class="page-width">
+    <div class="featured__page-wrapper container">
+        <div class="featured__page-hero">
+            <div class="featured__page-hero-textbox">
+                <div class="featured__page-hero-eyebrow">
+                    {{ collection.metafields.description.eyebrow }}
+                </div>
+                <h1 class="featured__page-hero-title">
+                   {{ collection.metafields.description.title }}
+                </h1>
+                <a href="{{ collection.metafields.description.cta_url }}"
+                   class="btn hero__btn"
+                >
+                    {{ collection.metafields.description.cta_label }}
+                    <span class="hero__btn-arrow">
+                        <img src="{{ 'arrow.svg' | asset_url }}" alt="arrow">
+                    </span>
+                </a>
+            </div>
+            <div class="featured__page-imagebox">
+                <div class="featured__page-main-img-wrap">
+                    <img src="{{ collection.metafields.description.image_1.cloudinary_src }}" alt="">
+                </div>
+                <div class="featured__page-preview">
+                    <img src="{{ collection.metafields.description.image_2.cloudinary_src }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 

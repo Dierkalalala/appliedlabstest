@@ -21,18 +21,12 @@
       {% endunless %}
       </div>
     </div>
-
     <div class="list-view-item__title-column">
       <div class="list-view-item__title" aria-hidden="true">
         <span class="product-card__title">{{ product.title }}</span>
       </div>
-      {% if show_vendor %}
-        <div class="list-view-item__vendor">{{ product.vendor }}</div>
-      {% endif %}
     </div>
-
     <div class="list-view-item__price-column">
-      {% include 'product-price-listing', product: product, show_vendor: false %}
     </div>
   </div>
 </div>

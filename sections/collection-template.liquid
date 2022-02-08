@@ -1,16 +1,12 @@
-{% for product in collection.products %}
-  <li class="list-view-item">
-    {% include 'product-card-list', product: product, show_vendor: section.settings.show_vendor %}
-  </li>
-{% endfor %}
-
-
-
-{% schema %}
-{
-  "name": {
-    "en": "Collection pages"
-  },
-  "settings": []
-}
-{% endschema %}
+<div class="page-width">
+    <div class="collection__page-content">
+        <div class="collection__page-items">
+            {% assign products = collection.metafields.allproducts.products %}
+            {% for product in products %}
+                <li class="list-view-item">
+                    {% include 'product-card-list', product: product %}
+                </li>
+            {% endfor %}
+        </div>
+    </div>
+</div>
