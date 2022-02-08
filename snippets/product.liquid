@@ -1,6 +1,6 @@
 <div class="product-card">
     <div class="product-card--image">
-        {%- assign img_url = product.media | img_url: '100x100' -%}
+        {%- assign img_url = product.featured_image | img_url: '100x100' -%}
         <img src="{{ img_url }}" class="feature-row__image lazyload"
              alt="{{ product.media.alt | escape }}">
     </div>
