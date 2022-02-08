@@ -190,7 +190,7 @@
     }
   </script>
   {{ 'https://unpkg.com/swiper@8/swiper-bundle.min.css' | stylesheet_tag }}
-  {{ 'bootstrap-grid.css' | stylesheet_tag }}
+  {{ 'bootstrap-grid.css' | asset_url | stylesheet_tag }}
   {{ 'main.scss.css' | asset_url | stylesheet_tag }}
 
   {{ content_for_header }}
