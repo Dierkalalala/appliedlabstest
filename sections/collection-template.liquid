@@ -1,9 +1,9 @@
-<div class="page-width">
+<div class="container">
     <div class="collection__page-content">
         <div class="collection__page-items">
             {% assign products = collections[collection.metafields.allproducts.products].products %}
             {% for product in products %}
-                <div class="collection__page-product-wrapper">
+                <div class="col-lg-3 mb-3">
                     {% render 'product', product: product %}
                 </div>
             {% endfor %}
