@@ -1,6 +1,6 @@
 <div class="product-card">
     <div class="product-card--image">
-        {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        {%- assign img_url = product.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
         <img class="feature-row__image lazyload"
              data-src="{{ img_url }}"
              data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
@@ -10,7 +10,7 @@
     </div>
     <div class="product-card--textbox">
         <h3 class="product-card-title">
-            {{ block.settings.title | escape }}
+            {{ product.title | escape }}
             <span class="product-card--hover-arrow">
                 <img src="{{ 'b-arrow.svg' | asset_url }}" alt="arrow">
             </span>

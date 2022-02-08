@@ -9,17 +9,13 @@
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
-      {{ collections[section.settings.collection].products | json }}
-      {%- assign collection = collections[section.settings.collection] -%}
-      {% comment %}{{ collection.featured_products | json }}{% endcomment %}
-      {% for product in collections %}
-        {% comment %}{{ product | json }}{% endcomment %}
+      {%- assign featured_products = collections[section.settings.collection].products -%}
+      <pre>
+        {{ featured_products | json }}
+      </pre>
+      {% for product in featured_products %}
+        {% render 'product', product: block %}
       {% endfor %}
-      {% comment %}{% for block in section.blocks %}
-        <div class="swiper-slide">
-          {% comment %}{% render 'product', block: block %}{% endcomment %}
-        </div>
-      {% endfor %}{% endcomment %}
     </div>
 
     <!-- If we need scrollbar -->
