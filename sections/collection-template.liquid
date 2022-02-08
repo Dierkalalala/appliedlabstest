@@ -2,6 +2,7 @@
     <div class="collection__page-content">
         <div class="collection__page-items">
             {% assign products = collection.metafields.allproducts.products %}
+            {{ products | json }}
             {% for product in products %}
                 <li class="list-view-item">
                     {% include 'product-card-list', product: product %}
