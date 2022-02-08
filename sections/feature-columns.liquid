@@ -9,13 +9,13 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide">
-                {%- assign featured_products = collections[section.settings.collection].products -%}
-                {% for product in featured_products %}
+            {%- assign featured_products = collections[section.settings.collection].products -%}
+            {% for product in featured_products %}
+                <div class="swiper-slide">
                     {{ product.media }}
                     {% render 'product', product: product %}
-                {% endfor %}
-            </div>
+                </div>
+            {% endfor %}
         </div>
 
         <!-- If we need scrollbar -->
