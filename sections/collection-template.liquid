@@ -3,9 +3,9 @@
         <div class="collection__page-items">
             {% assign products = collections[collection.metafields.allproducts.products].products %}
             {% for product in products %}
-                <li class="list-view-item">
-                    {% include 'product-card-grid', product: product %}
-                </li>
+                <div class="collection__page-product-wrapper">
+                    {% render 'product', product: product %}
+                </div>
             {% endfor %}
         </div>
     </div>
