@@ -9,6 +9,7 @@
       "header": {
         "type": "header",
         "settings": {
+          "black_logo": "",
           "align_logo": "left",
           "logo": "shopify:\/\/shop_images\/logo.png",
           "logo_max_width": 215,
