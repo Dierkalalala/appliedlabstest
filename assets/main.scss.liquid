@@ -481,7 +481,13 @@
 .product__page-description-wrapper{
   height: 620px;
 }
-
+.product__page-description {
+  &:nth-child(even) {
+    .row {
+      flex-direction: row-reverse;
+    }
+  }
+}
 
 
 
