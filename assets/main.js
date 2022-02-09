@@ -42,6 +42,7 @@ class API {
     let selectedProductId = selectWithAllVariants.value;
     let addToCartBtn = document.querySelector('.js-add-to-cart-btn');
     let cartPopUp = document.querySelector('.cart-popup-wrapper');
+    let priceElement = document.querySelector('.product__textbox-price');
 
 
     window.addEventListener('DOMContentLoaded', _startProductWorkSpace)
@@ -84,6 +85,11 @@ class API {
             allOptions = allOptions.filter(option => option.text.indexOf(selector.innerText) !== -1)
         })
         selectedProductId = allOptions[0].value
+        _changePrice(allOptions[0].getAttribute('data-price'));
+    }
+
+    function _changePrice(price) {
+        priceElement.innerText = price
     }
 
     function _editCartPopUpContent(data) {
