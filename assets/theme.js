@@ -7865,6 +7865,7 @@ theme.Maps = (function() {
 /* eslint-disable no-new */
 theme.Product = (function() {
   function Product(container) {
+    console.log(container);
     this.container = container;
     var sectionId = container.getAttribute('data-section-id');
     this.zoomPictures = [];
