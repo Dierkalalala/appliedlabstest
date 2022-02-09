@@ -85,9 +85,10 @@ class API {
         let image = data.image;
         let detailsMarkUp = options.map(option =>
             `<li class="product-details__item product-details__item--variant-option">${option.name}: ${option.value}</li>`
-        )
+        ).join('');
         document.querySelector('.cart-popup-item__title').innerText = title;
         document.querySelector('.cart-popup-item__title').innerHTML = detailsMarkUp;
+        document.querySelector('.cart-popup-item__image-wrapper').classList.remove('hide')
         document.querySelector('.cart-popup-item__image-wrapper').innerHTML = `
             <img src="${image}" class="cart-popup-item__image" data-cart-popup-image alt="${title}">
         `;
