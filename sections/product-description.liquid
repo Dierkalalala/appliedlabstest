@@ -6,8 +6,8 @@
                     {{ description.html }}
                 </div>
                 <div class="col-lg-6">
-                    {{ product.metafields.description.image[forloop.index0] | json }}
-                    <img src="{{ product.metafields.description.image[forloop.index0].cloudinary_src }}" alt="">
+                    {% assign img = product.metafields.description.image[forloop.index0] | first %}
+                    <img src="{{ img.cloudinary_src }}" alt="">
                 </div>
             </div>
         </div>
