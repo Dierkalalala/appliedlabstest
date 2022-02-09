@@ -1,12 +1,14 @@
+{% for description in product.metafields.description %}
+    {{ description | json }}
+{% endfor %}
 <section class="product__page-description">
-    {{ product.metafields.description.content | json }}
+    {{ product.metafields.description | json }}
     <div class="container">
         <div class="row align-items-center product__page-description-wrapper">
             <div class="col-lg-6">
                 <div class="h2 title-wrapper">
                     Rubber Hex Dumbbells
                 </div>
-
                 <div>
                     Again Faster® Rubber Hex Dumbbells offer one of the most effective ways to add variance to any
                     training program. Functional dumbbell movements cultivate stability, coordination and strength in
@@ -19,7 +21,6 @@
                 <div>
                     Need a way to organize your weights? Check out some of our Storage Options.
                 </div>
-
             </div>
             <div class="col-lg-6">
                 <img src="https://cdn.shopify.com/s/files/1/0625/6325/4526/products/DB40top1.png" alt="">
