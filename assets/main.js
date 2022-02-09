@@ -21,7 +21,7 @@ const swiper = new Swiper('.featured__swiper-products', {
         }
     }
 })
-class Api {
+class API {
     constructor() {
         this.baseUrl = '';
     }
@@ -40,6 +40,8 @@ class Api {
     let selectWithAllVariants = document.querySelector('.product-select');
     let activeSelectors = [];
     let selectedProductId = selectWithAllVariants.value;
+    let addToCartBtn = document.querySelector('.js-add-to-cart-btn');
+
 
     window.addEventListener('DOMContentLoaded', _startProductWorkSpace)
     function _startProductWorkSpace() {
@@ -47,6 +49,7 @@ class Api {
         productOptionChanger.forEach(optionChanger => {
             optionChanger.addEventListener('click', changeOption)
         })
+        addToCartBtn.addEventListener('click', addToCart);
     }
 
     function changeOption() {
@@ -72,8 +75,20 @@ class Api {
         activeSelectors.forEach(selector => {
             allOptions = allOptions.filter(option => option.text.indexOf(selector.innerText) !== -1)
         })
+        selectedProductId = allOptions[0].value
+    }
 
-        console.log(allOptions);
+    function addToCart() {
+        API.post('/cart/add.js', {
+            id: selectedProductId,
+            quantity: 1,
+        })
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            })
 
     }
 
