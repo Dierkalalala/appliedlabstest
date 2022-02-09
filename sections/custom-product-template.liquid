@@ -12,14 +12,7 @@
                 {{ product.title }}
             </h1>
             <div class="product__textbox-price">
-                {%- liquid
-                    if settings.currency_code_enabled
-                        assign money_price = price | money_with_currency
-                    else
-                        assign money_price = price | money
-                    endif
-                -%}
-                {{ money_price }}
+                {{ product.price }}
             </div>
             <div class="product__textbox-options-wrapper">
                 <div class="d-flex product__textbox-option">
