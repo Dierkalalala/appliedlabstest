@@ -71,8 +71,8 @@
 
 
                 <div class="product__textbox-additional-items row">
-                    {% for productName in  productsLinks %}
-                        <div class="product__textbox-additional-item d-flex col-md-6">
+                    {% for productName in  productsLinks limit:2 %}
+                        <a href="{{ all_products[productName].url }}" class="product__textbox-additional-item d-flex col-md-6">
                             <div class="product__textbox-additional-item-img-wrap">
                                 <img src="{{ all_products[productName].images[0] | image_url }}"
                                      alt="">
@@ -85,7 +85,7 @@
                                     Add to Cart
                                 </a>
                             </div>
-                        </div>
+                        </a>
                     {% endfor %}
                 </div>
             </div>
