@@ -52,7 +52,7 @@
             </div>
 
             <div class="product__textbox-terms">
-                Available for Free shipping!
+                Available for {{ product.metafields.shipping.shipping }}
             </div>
 
             <div class="product__textbox-order-btn">
@@ -66,6 +66,7 @@
                 <div class="product__textbox-additional-title">
                     Frequently bought with
                 </div>
+                {{ product.metafields.accentuate.related_products | json }}
                 <div class="product__textbox-additional-items row">
                     <div class="product__textbox-additional-item d-flex col-md-6">
                         <div class="product__textbox-additional-item-img-wrap">
