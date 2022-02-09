@@ -5,7 +5,7 @@
                 <div class="col-lg-6">
                     {{ description.html }}
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 image-wrapper">
                     {% assign img = product.metafields.description.image[forloop.index0] | first %}
                     <img src="{{ img.cloudinary_src }}" alt="">
                 </div>

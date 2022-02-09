@@ -482,12 +482,25 @@
   height: 620px;
 }
 .product__page-description {
+  position: relative;
   &:nth-child(even) {
     .row {
       flex-direction: row-reverse;
     }
   }
+  &:first-child{
+    .image-wrapper{
+      height: 100%;
+      img{
+        right: 0;
+        top: 0;
+        height: 100%;
+        max-width: 50%;
+      }
+    }
+  }
 }
+
 
 
 
