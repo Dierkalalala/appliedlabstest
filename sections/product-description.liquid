@@ -1,5 +1,6 @@
 {% for description in product.metafields.description %}
     {{ description | json }}
+    <br><br>
 {% endfor %}
 <section class="product__page-description">
     {{ product.metafields.description | json }}
