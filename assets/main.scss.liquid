@@ -387,6 +387,13 @@
     color: #000000;
     cursor: pointer;
     margin-right: 15px;
+    transition: 0.3s linear all;
+    &.selected {
+      border-color: #000;
+    }
+    &:hover{
+      border-color: #000;
+    }
   }
 }
 .product__textbox-terms{
@@ -443,12 +450,25 @@
   line-height: 167.5%;
   text-decoration-line: underline;
   color: #000000;
+  cursor: pointer;
 }
 .product__textbox-additional-item-textbox{
   padding-top: 22px;
 }
+.product__option-wrapper::-webkit-scrollbar {
+  width: 4px;
+  background: #F1F1F1;
+  border-radius: 92px;
+}
+.product__option-wrapper::-webkit-scrollbar-track {
+  background: #F1F1F1;
+  border-radius: 92px;
+}
 
-
+.product__option-wrapper::-webkit-scrollbar-thumb {
+  background: #353535;
+  border-radius: 92px;
+}
 
 
 
