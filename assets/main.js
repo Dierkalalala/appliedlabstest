@@ -51,6 +51,13 @@ class API {
             optionChanger.addEventListener('click', changeOption)
         })
         addToCartBtn.addEventListener('click', addToCart);
+
+        document.querySelector('.cart-popup__close').addEventListener('click', closeCartPopUp)
+        document.querySelector('.cart-popup__dismiss-button').addEventListener('click', closeCartPopUp)
+    }
+
+    function closeCartPopUp() {
+        document.querySelector('.cart-popup-wrapper').classList.add('cart-popup-wrapper--hidden')
     }
 
     function changeOption() {
@@ -95,7 +102,6 @@ class API {
     }
 
     function _showAddToCartPopUp(data) {
-        console.log(theme.Product);
         _editCartPopUpContent(data)
         cartPopUp.classList.remove('cart-popup-wrapper--hidden')
     }
