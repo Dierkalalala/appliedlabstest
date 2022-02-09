@@ -33,7 +33,7 @@
             </div>
             <div class="product__textbox-selection-wrapper">
                 {% unless product.has_only_default_variant %}
-                    <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js">
+                    <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js product-select">
                         {% for variant in product.variants %}
                             <option value="{{ variant.id }}"
                                     {%- if variant == current_variant %} selected="selected" {%- endif -%}
@@ -45,9 +45,9 @@
 
                     <div class="product__textbox-options">
                         {% for option in product.options_with_values %}
-                            <div class="product__option-wrapper">
+                            <div data-id="SingleOptionSelector-{{ forloop.index0 }}" class="product__option-wrapper js-option-selectors">
                                 {% for value in option.values %}
-                                    <label data-id="SingleOptionSelector-{{ forloop.index0 }}" class="{% if option.selected_value == value %}selected{% endif %}"
+                                    <label class="{% if option.selected_value == value %}selected{% endif %}"
                                            data-value="{{ value | escape }}"> {{ value | escape }} </label>
                                 {% endfor %}
                             </div>
