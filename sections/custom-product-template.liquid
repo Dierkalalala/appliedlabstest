@@ -1,4 +1,4 @@
-<div class="no-gutters row">
+<div class="no-gutters row product-template-wrapper">
     <div class="col-md-6">
         <div class="product__page-main-img">
             <img class=""
@@ -44,13 +44,13 @@
                         {% for option in product.options_with_values %}
                             <div class="product__option-wrapper">
                                 {% for value in option.values %}
-                                    <label class="{% if option.selected_value == value %}selected{% endif %}" data-value="{{ value | escape }}"> {{ value | escape }} </label>
+                                    <label class="{% if option.selected_value == value %}selected{% endif %}"
+                                           data-value="{{ value | escape }}"> {{ value | escape }} </label>
                                 {% endfor %}
                             </div>
                         {% endfor %}
                     </div>
                 {% endunless %}
-
 
 
             </div>
@@ -70,16 +70,33 @@
                 <div class="product__textbox-additional-title">
                     Frequently bought with
                 </div>
-                <div class="product__textbox-additional-items">
-                    <div class="product__textbox-additional-item">
+                <div class="product__textbox-additional-items row">
+                    <div class="product__textbox-additional-item col-md-6">
                         <div class="product__textbox-additional-item-img-wrap">
-                            <img src="https://cdn.shopify.com/s/files/1/0625/6325/4526/products/assault-blk-front-angle2-1600x1600-300dpi6_1024x1024@2x.png?v=1644124957" alt="">
+                            <img src="https://cdn.shopify.com/s/files/1/0625/6325/4526/products/assault-blk-front-angle2-1600x1600-300dpi6_1024x1024@2x.png?v=1644124957"
+                                 alt="">
                         </div>
-                        <div class="product__textbox-additional-item-title">
-                            Product Name
+                        <div class="product__textbox-additional-item-textbox">
+                            <div class="product__textbox-additional-item-title">
+                                Product Name
+                            </div>
+                            <a class="product__textbox-additional-add-to-card-btn">
+                                Add to Cart
+                            </a>
                         </div>
-                        <div class="product__textbox-additional-add-to-card-btn">
-                            Add to Cart
+                    </div>
+                    <div class="product__textbox-additional-item col-md-6">
+                        <div class="product__textbox-additional-item-img-wrap">
+                            <img src="https://cdn.shopify.com/s/files/1/0625/6325/4526/products/assault-blk-front-angle2-1600x1600-300dpi6_1024x1024@2x.png?v=1644124957"
+                                 alt="">
+                        </div>
+                        <div class="product__textbox-additional-item-textbox">
+                            <div class="product__textbox-additional-item-title">
+                                Product Name
+                            </div>
+                            <a class="product__textbox-additional-add-to-card-btn">
+                                Add to Cart
+                            </a>
                         </div>
                     </div>
                 </div>
