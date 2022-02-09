@@ -2,7 +2,7 @@
     <div class="col-md-6">
         <div class="product__page-main-img">
             <img class=""
-                 src="https://cdn.shopify.com/s/files/1/0625/6325/4526/products/assault-blk-front-angle2-1600x1600-300dpi6_1024x1024@2x.png?v=1644124957"
+                 src="{{ product.images[0] | image_url }}"
                  alt="">
         </div>
     </div>
@@ -66,36 +66,27 @@
                 <div class="product__textbox-additional-title">
                     Frequently bought with
                 </div>
-                {{ product.metafields.accentuate.related_products | json }}
+                {{ product.metafields.accentuate.related_products | split: '|' | json }}
+                {% assign productsLinks = product.metafields.accentuate.related_products | split: '|' %}
+
+
                 <div class="product__textbox-additional-items row">
-                    <div class="product__textbox-additional-item d-flex col-md-6">
-                        <div class="product__textbox-additional-item-img-wrap">
-                            <img src="https://cdn.shopify.com/s/files/1/0625/6325/4526/products/assault-blk-front-angle2-1600x1600-300dpi6_1024x1024@2x.png?v=1644124957"
-                                 alt="">
-                        </div>
-                        <div class="product__textbox-additional-item-textbox">
-                            <div class="product__textbox-additional-item-title">
-                                Product Name
+                    {% for productName in  productsLinks %}
+                        <div class="product__textbox-additional-item d-flex col-md-6">
+                            <div class="product__textbox-additional-item-img-wrap">
+                                <img src="{{ all_products[productName].images[0] | image_url }}"
+                                     alt="">
                             </div>
-                            <a class="product__textbox-additional-add-to-card-btn">
-                                Add to Cart
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product__textbox-additional-item d-flex col-md-6">
-                        <div class="product__textbox-additional-item-img-wrap">
-                            <img src="https://cdn.shopify.com/s/files/1/0625/6325/4526/products/assault-blk-front-angle2-1600x1600-300dpi6_1024x1024@2x.png?v=1644124957"
-                                 alt="">
-                        </div>
-                        <div class="product__textbox-additional-item-textbox">
-                            <div class="product__textbox-additional-item-title">
-                                Product Name
+                            <div class="product__textbox-additional-item-textbox">
+                                <div class="product__textbox-additional-item-title">
+                                    {{ all_products[productName].title }}
+                                </div>
+                                <a class="product__textbox-additional-add-to-card-btn">
+                                    Add to Cart
+                                </a>
                             </div>
-                            <a class="product__textbox-additional-add-to-card-btn">
-                                Add to Cart
-                            </a>
                         </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
 
