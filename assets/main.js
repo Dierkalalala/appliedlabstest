@@ -41,6 +41,7 @@ class API {
     let activeSelectors = [];
     let selectedProductId = selectWithAllVariants.value;
     let addToCartBtn = document.querySelector('.js-add-to-cart-btn');
+    let cartPopUp = document.querySelector('.cart-popup-wrapper');
 
 
     window.addEventListener('DOMContentLoaded', _startProductWorkSpace)
@@ -78,18 +79,43 @@ class API {
         selectedProductId = allOptions[0].value
     }
 
+    function _editCartPopUpContent(data) {
+        let title = data.product_title;
+        let options = data.options_with_values;
+        let image = data.image;
+        let detailsMarkUp = options.map(option =>
+            `<li class="product-details__item product-details__item--variant-option">${option.name}: ${option.value}</li>`
+        )
+        document.querySelector('.cart-popup-item__title').innerText = title;
+        document.querySelector('.cart-popup-item__title').innerHTML = detailsMarkUp;
+        document.querySelector('.cart-popup-item__image').innerHTML = image;
+    }
+
+    function _showAddToCartPopUp(data) {
+        _editCartPopUpContent(data)
+        cartPopUp.classList.remove('cart-popup-wrapper--hidden')
+    }
+
     function addToCart() {
         API.post('/cart/add.js', {
             id: selectedProductId,
             quantity: 1,
         })
             .then(res => {
-                console.log(res)
+                _showAddToCartPopUp(res.data)
             })
             .catch(err => {
                 console.log(err)
             })
-
+    }
+    function getCart() {
+        API.get('/cart.js')
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
 
 
