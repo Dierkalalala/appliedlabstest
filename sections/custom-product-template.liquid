@@ -66,10 +66,7 @@
                 <div class="product__textbox-additional-title">
                     Frequently bought with
                 </div>
-                {{ product.metafields.accentuate.related_products | split: '|' | json }}
                 {% assign productsLinks = product.metafields.accentuate.related_products | split: '|' %}
-
-
                 <div class="product__textbox-additional-items row">
                     {% for productName in  productsLinks limit:2 %}
                         <a href="{{ all_products[productName].url }}" class="product__textbox-additional-item d-flex col-md-6">
