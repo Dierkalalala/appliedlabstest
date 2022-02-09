@@ -370,7 +370,7 @@
 .product__option-wrapper{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   overflow-y: scroll;
   max-height: 250px;
   margin-bottom: 16px;
@@ -386,6 +386,7 @@
     line-height: 167.5%;
     color: #000000;
     cursor: pointer;
+    margin-right: 15px;
   }
 }
 .product__textbox-terms{
@@ -396,6 +397,8 @@
 }
 .product__textbox-order-btn{
   margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #F1F1F1;
 }
 
 .fill-button{
@@ -408,6 +411,10 @@
   letter-spacing: 0.175em;
   text-transform: uppercase;
   color: #FFFFFF;
+  padding-bottom: 0;
+  &:hover{
+    padding-left: 0;
+  }
 }
 
 .product__textbox-additional-title{
@@ -420,7 +427,8 @@
 .product__textbox-additional-item-img-wrap{
   max-height: 125px;
   img{
-    height: 100%;
+    max-height: 100%;
+    max-width: 98px;
   }
 }
 .product__textbox-additional-item-title{
@@ -436,7 +444,9 @@
   text-decoration-line: underline;
   color: #000000;
 }
-
+.product__textbox-additional-item-textbox{
+  padding-top: 22px;
+}
 
 
 

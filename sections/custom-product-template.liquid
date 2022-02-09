@@ -9,10 +9,17 @@
     <div class="col-md-6">
         <div class="product__textbox">
             <h1 class="product__textbox-main-title">
-                Dumbbell Singles
+                {{ product.title }}
             </h1>
             <div class="product__textbox-price">
-                $4.00
+                {%- liquid
+                    if settings.currency_code_enabled
+                        assign money_price = price | money_with_currency
+                    else
+                        assign money_price = price | money
+                    endif
+                -%}
+                {{ money_price }}
             </div>
             <div class="product__textbox-options-wrapper">
                 <div class="d-flex product__textbox-option">
@@ -22,11 +29,7 @@
                 </div>
             </div>
             <div class="product__textbox-description">
-                <p>
-                    Again Faster Dumbbells offer the ability to target specific muscle groups or attain a full body
-                    workout. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                    laudantium, totam rem aperiam.
-                </p>
+                {{ product.description }}
             </div>
             <div class="product__textbox-selection-wrapper">
                 {% unless product.has_only_default_variant %}
@@ -71,7 +74,7 @@
                     Frequently bought with
                 </div>
                 <div class="product__textbox-additional-items row">
-                    <div class="product__textbox-additional-item col-md-6">
+                    <div class="product__textbox-additional-item d-flex col-md-6">
                         <div class="product__textbox-additional-item-img-wrap">
                             <img src="https://cdn.shopify.com/s/files/1/0625/6325/4526/products/assault-blk-front-angle2-1600x1600-300dpi6_1024x1024@2x.png?v=1644124957"
                                  alt="">
@@ -85,7 +88,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="product__textbox-additional-item col-md-6">
+                    <div class="product__textbox-additional-item d-flex col-md-6">
                         <div class="product__textbox-additional-item-img-wrap">
                             <img src="https://cdn.shopify.com/s/files/1/0625/6325/4526/products/assault-blk-front-angle2-1600x1600-300dpi6_1024x1024@2x.png?v=1644124957"
                                  alt="">
