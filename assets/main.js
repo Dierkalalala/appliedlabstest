@@ -37,7 +37,7 @@ class Api {
 (function ProductWorkSpace() {
     let productOptionChanger = document.querySelectorAll('.product__option-wrapper label')
     let optionSelectors = document.querySelectorAll('.js-option-selectors');
-    let selectWithAllVariants = document.querySelectorAll('.product-select');
+    let selectWithAllVariants = document.querySelector('.product-select');
     let activeSelectors = [];
     let selectedProductId = selectWithAllVariants.value;
 
@@ -54,7 +54,7 @@ class Api {
             .getAttribute('data-id').split('-')[1]
         activeSelectors[activeSelectorIndex].classList.remove('selected')
         activeSelectors[activeSelectorIndex] = this
-        activeSelectors[activeSelectorIndex].classList.remove('selected')
+        activeSelectors[activeSelectorIndex].classList.add('selected')
         _changeActiveSelectedProduct();
 
     }
