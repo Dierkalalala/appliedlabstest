@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row align-items-center product__page-description-wrapper">
                 <div class="col-lg-6">
-                    {{ description }}
+                    {{ description.html }}
                 </div>
                 <div class="col-lg-6">
                     <img src="{{ product.metafields.description.image[forloop.index0].cloudinary_src }}" alt="">
