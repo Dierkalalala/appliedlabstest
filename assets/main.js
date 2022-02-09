@@ -87,7 +87,7 @@ class API {
             `<li class="product-details__item product-details__item--variant-option">${option.name}: ${option.value}</li>`
         ).join('');
         document.querySelector('.cart-popup-item__title').innerText = title;
-        document.querySelector('.cart-popup-item__title').innerHTML = detailsMarkUp;
+        document.querySelector('.cart-popup-item__description .product-details').innerHTML = detailsMarkUp;
         document.querySelector('.cart-popup-item__image-wrapper').classList.remove('hide')
         document.querySelector('.cart-popup-item__image-wrapper').innerHTML = `
             <img src="${image}" class="cart-popup-item__image" data-cart-popup-image alt="${title}">
@@ -95,6 +95,7 @@ class API {
     }
 
     function _showAddToCartPopUp(data) {
+        console.log(theme.Product);
         _editCartPopUpContent(data)
         cartPopUp.classList.remove('cart-popup-wrapper--hidden')
     }
