@@ -1,31 +1,17 @@
-{% for description in product.metafields.description %}
-    {{ description | json }}
-    <br><br>
-{% endfor %}
-<section class="product__page-description">
-    {{ product.metafields.description | json }}
-    <div class="container">
-        <div class="row align-items-center product__page-description-wrapper">
-            <div class="col-lg-6">
-                <div class="h2 title-wrapper">
-                    Rubber Hex Dumbbells
+{% for description in product.metafields.description.content %}
+    <section class="product__page-description">
+        {{ product.metafields.description | json }}
+        <div class="container">
+            <div class="row align-items-center product__page-description-wrapper">
+                <div class="col-lg-6">
+                    {{ description }}
                 </div>
-                <div>
-                    Again Faster® Rubber Hex Dumbbells offer one of the most effective ways to add variance to any
-                    training program. Functional dumbbell movements cultivate stability, coordination and strength in
-                    ways that cannot be achieved using a barbell. Lighter dumbbells are great tools for accommodating
-                    athletes with an injury or those not yet comfortable with a bar. Whether you are making your first
-                    equipment purchase or looking to expand your gym's capabilities, making dumbbells a priority will
-                    take your training to the next level.
+                <div class="col-lg-6">
+                    <img src="{{ product.metafields.description.image[forloop.index0].cloudinary_src }}" alt="">
                 </div>
-                <br><br><br>
-                <div>
-                    Need a way to organize your weights? Check out some of our Storage Options.
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <img src="https://cdn.shopify.com/s/files/1/0625/6325/4526/products/DB40top1.png" alt="">
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <br><br>
+{% endfor %}
+
