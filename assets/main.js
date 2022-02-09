@@ -70,7 +70,7 @@ class Api {
     function _changeActiveSelectedProduct() {
         let allOptions = Array.from(selectWithAllVariants.options)
         activeSelectors.forEach(selector => {
-            allOptions = allOptions.filter(option => option.text.indexOf(selector.innerText))
+            allOptions = allOptions.filter(option => option.text.indexOf(selector.innerText) !== -1)
         })
 
         console.log(allOptions);
