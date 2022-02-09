@@ -6,7 +6,7 @@
                     {{ description.html }}
                 </div>
                 <div class="col-lg-6">
-                    {{ product.metafields.description.image[forloop.index0] | json }}
+                    {{ product.metafields.description.image | json }}
                     <img src="{{ product.metafields.description.image[forloop.index0].cloudinary_src }}" alt="">
                 </div>
             </div>
