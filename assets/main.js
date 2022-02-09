@@ -88,7 +88,9 @@ class API {
         )
         document.querySelector('.cart-popup-item__title').innerText = title;
         document.querySelector('.cart-popup-item__title').innerHTML = detailsMarkUp;
-        document.querySelector('.cart-popup-item__image').setAttribute('src', image);
+        document.querySelector('.cart-popup-item__image-wrapper').innerHTML = `
+            <img src="${image}" class="cart-popup-item__image" data-cart-popup-image alt="${title}">
+        `;
     }
 
     function _showAddToCartPopUp(data) {
