@@ -41,7 +41,7 @@ class Cart {
                     </div>
                   </td>
                 </tr>
-            {{ /each }}
+            {{/each}}
         `);
         this.getCartItems();
     }
