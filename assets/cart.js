@@ -22,7 +22,7 @@ class Cart {
                            {{/each}}
                         </ul>
                         <p class="cart__remove">
-                          <a href="/cart/change?line={{@index}}&amp;quantity=0" class="text-link text-link--accent">Remove</a>
+                          <a href="/cart/change?line={{@index}}&amp;quantity=0" class="text-link js-cart-remove text-link--accent">Remove</a>
                         </p>
                       </div>
                     </div>
@@ -32,7 +32,7 @@ class Cart {
                   </div>
                   <div class="cart__quantity-td text-right">
                     <div class="cart__qty">
-                        <input class="cart__qty-input" type="number" value="{{ item.quantity }}" min="0" pattern="[0-9]*">
+                        <input class="cart__qty-input js-quantity-changer" type="number" value="{{ item.quantity }}" min="0" pattern="[0-9]*">
                     </div>
                   </div>
                   <div class="cart__final-price text-right">                 
@@ -43,6 +43,7 @@ class Cart {
                 </div>
             {{/each}}
         `);
+        this.readyToUseMarkUp = null;
         this.getCartItems();
     }
 
@@ -52,12 +53,41 @@ class Cart {
             .then(res => {
                 let wrapper = document.createElement('div')
                 wrapper.innerHTML = this.cartItemMarkUp({items: res.data.items})
-                console.log(wrapper.children)
+                this.readyToUseMarkUp = wrapper
             })
             .catch(err => {
                 console.log(err);
             })
     }
+
+
+    setEventListenersToElements () {
+        const QUANTITY_CHANGER = 'js-quantity-changer';
+        const REMOVE_BUTTON_WRAPPER = 'js-cart-remove';
+
+        let quantityChangerElements = this.readyToUseMarkUp.querySelectorAll(`.${QUANTITY_CHANGER}`)
+        let removeButtonElements = this.readyToUseMarkUp.querySelectorAll(`.${REMOVE_BUTTON_WRAPPER}`)
+
+        quantityChangerElements.forEach((quantityChanger) => {
+            quantityChanger.addEventListener('change', this.changeQuantity.bind(quantityChanger))
+        })
+
+        removeButtonElements.forEach((removeButton) => {
+            removeButton.addEventListener('click', this.removeItem.bind(removeButton))
+        })
+
+    }
+
+    changeQuantity() {
+        console.log(this)
+    }
+
+    removeItem() {
+        console.log(this)
+    }
+
+
+
 
 
 }
