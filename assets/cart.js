@@ -56,11 +56,15 @@ class Cart {
             {{/each}}
         `);
         this.readyToUseMarkUp = null;
+        this.subTotalElement = document.querySelector('.cart-subtotal__price');
         this.getCartItems();
     }
 
     static cartChangeRequest(line, quantity) {
-        return CartAPI.get(`/cart/change?line=${line}&quantity=${quantity}`)
+        return CartAPI.post(`/cart/update.js`, {
+            line,
+            quantity
+        })
     }
 
     static getIndexOfElement(element) {
@@ -125,11 +129,16 @@ class Cart {
         const index = Cart.getIndexOfElement(this)
         Cart.cartChangeRequest(index, 0)
             .then(res => {
-                console.log(res)
+                this.closest('.cart__row').remove();
+
             })
             .catch(err => {
                 console.log(err)
             })
+    }
+
+    countSubTotal(subTotal) {
+        this.subTotalElement.innerText = subTotal
     }
 
 
