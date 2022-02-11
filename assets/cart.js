@@ -3,7 +3,7 @@ class Cart {
         this.items = [];
         this.cartItemMarkUp = Handlebars.compile(`
             {{#each items as | item |}}
-                <div class="cart__row">
+                <div class="cart__row d-flex">
                   <div class="cart__meta small--text-left">
                     <div class="cart__product-information">
                       <div class="cart__image-wrapper">
@@ -87,7 +87,7 @@ class Cart {
         event.preventDefault();
         console.log(this)
         if (+this.value === 0) {
-            let boundRemoveElement = this.removeItem.bind(this);
+            let boundRemoveElement = cart.removeItem.bind(this);
             boundRemoveElement();
         }
     }
