@@ -52,7 +52,7 @@ class Cart {
             .then(res => {
                 let wrapper = document.createElement('div')
                 wrapper.innerHTML = this.cartItemMarkUp({items: res.data.items})
-                console.log(wrapper)
+                console.log(wrapper.children)
             })
             .catch(err => {
                 console.log(err);
