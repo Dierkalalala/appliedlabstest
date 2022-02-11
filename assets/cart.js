@@ -47,8 +47,16 @@ class Cart {
         this.getCartItems();
     }
 
-    cartChangeRequest(line, quantity) {
+    static cartChangeRequest(line, quantity) {
         return API.get(`/cart/change?line=${line}&quantity=${quantity}`)
+    }
+
+    static getIndexOfElement(element) {
+        let parent = element.closest('.cart__row')
+        let wrapper = parent.parentElement;
+        let arrayOfParents = Array.from
+        (wrapper.querySelectorAll('.cart__row'));
+        return arrayOfParents.indexOf(parent);
     }
 
     getCartItems() {
@@ -85,21 +93,31 @@ class Cart {
 
     changeQuantity(event) {
         event.preventDefault();
-        console.log(this)
         if (+this.value === 0) {
             let boundRemoveElement = cart.removeItem.bind(this, event);
             boundRemoveElement();
         }
+        const index = Cart.getIndexOfElement(this)
+        Cart.cartChangeRequest(index, this.value)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
+
 
     removeItem(event) {
         event.preventDefault();
-        let parent = this.closest('.cart__row')
-        let wrapper = parent.parentElement;
-        let arrayOfParents = Array.from
-        (wrapper.querySelectorAll('.cart__row'));
-        console.log(arrayOfParents.indexOf(parent));
-
+        const index = Cart.getIndexOfElement(this)
+        Cart.cartChangeRequest(index, 0)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 
 
