@@ -117,7 +117,7 @@ class Cart {
         Cart.cartChangeRequest(index, +this.value)
             .then(res => {
                 cart.countSubTotal(`${res.data.items_subtotal_price} ${res.data.currency}`)
-                this.closest('.cart__row').querySelector('.js-line-final-price').innerText = res.data.items[index].final_line_price
+                this.closest('.cart__row').querySelector('.js-line-final-price').innerText = res.data.items[index - 1].final_line_price
             })
             .catch(err => {
                 console.log(err);
