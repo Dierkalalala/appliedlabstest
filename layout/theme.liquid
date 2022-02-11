@@ -72,19 +72,6 @@
       link.loaded = true;
       link.dispatchEvent(new Event('load'));
     }
-
-    class API {
-      constructor() {
-        this.baseUrl = '';
-      }
-      static get(url) {
-        return axios.get(url)
-      }
-
-      static post (url, data) {
-        return axios.post(url, data)
-      }
-    }
   </script>
 
   <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" type="text/css" media="print" onload="this.media='all';onLoadStylesheet()">
@@ -202,7 +189,25 @@
       scripts.parentNode.insertBefore(polyfill, scripts);
     }
   </script>
+
   <script type="text/javascript" src="https://unpkg.com/axios@0.25.0/dist/axios.min.js"></script>
+
+  <script type="text/javascript">
+    class API {
+      constructor() {
+        this.baseUrl = '';
+      }
+      static get(url) {
+        return axios.get(url)
+      }
+
+      static post (url, data) {
+        return axios.post(url, data)
+      }
+    }
+  </script>
+
+
   {{ 'https://unpkg.com/swiper@8/swiper-bundle.min.css' | stylesheet_tag }}
   {{ 'bootstrap-grid.css' | asset_url | stylesheet_tag }}
   {{ 'main.scss.css' | asset_url | stylesheet_tag }}
