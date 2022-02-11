@@ -87,7 +87,7 @@ class Cart {
         event.preventDefault();
         console.log(this)
         if (+this.value === 0) {
-            let boundRemoveElement = cart.removeItem.bind(this);
+            let boundRemoveElement = cart.removeItem.bind(this, event);
             boundRemoveElement();
         }
     }
