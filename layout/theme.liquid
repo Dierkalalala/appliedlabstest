@@ -72,6 +72,19 @@
       link.loaded = true;
       link.dispatchEvent(new Event('load'));
     }
+
+    class API {
+      constructor() {
+        this.baseUrl = '';
+      }
+      static get(url) {
+        return axios.get(url)
+      }
+
+      static post (url, data) {
+        return axios.post(url, data)
+      }
+    }
   </script>
 
   <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" type="text/css" media="print" onload="this.media='all';onLoadStylesheet()">
