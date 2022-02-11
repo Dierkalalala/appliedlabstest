@@ -34,6 +34,7 @@ class Cart {
               </td>
             </tr>
         `
+        this.getCartItems();
     }
 
 
