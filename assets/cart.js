@@ -54,6 +54,8 @@ class Cart {
                 let wrapper = document.createElement('div')
                 wrapper.innerHTML = this.cartItemMarkUp({items: res.data.items})
                 this.readyToUseMarkUp = wrapper
+                this.setEventListenersToElements()
+                this.placeElements()
             })
             .catch(err => {
                 console.log(err);
@@ -86,7 +88,10 @@ class Cart {
         console.log(this)
     }
 
-
+    placeElements (){
+        let cartItemsWrapper = document.querySelector('.cart-items-wrapper');
+        cartItemsWrapper.appendChild(this.readyToUseMarkUp);
+    }
 
 
 
