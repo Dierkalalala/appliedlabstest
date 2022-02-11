@@ -1,6 +1,3 @@
-document.addEventListener("DOMContentLoaded", loadCart)
-
-
 class Cart {
     constructor(props) {
         this.items = [];
@@ -50,3 +47,5 @@ class Cart {
 
 
 }
+
+let cart = new Cart();
