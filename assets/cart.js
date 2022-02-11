@@ -3,8 +3,8 @@ class Cart {
         this.items = [];
         this.cartItemMarkUp = Handlebars.compile(`
             {{#each items as | item |}}
-                <tr class="cart__row">
-                  <td class="cart__meta small--text-left">
+                <div class="cart__row">
+                  <div class="cart__meta small--text-left">
                     <div class="cart__product-information">
                       <div class="cart__image-wrapper">
                         <img class="cart__image" alt="{{ item.featured_image.alt }}" src="{{ item.featured_image.url }}">
@@ -26,21 +26,21 @@ class Cart {
                         </p>
                       </div>
                     </div>
-                  </td>
-                  <td class="cart__price text-right">
+                  </div>
+                  <div class="cart__price text-right">
                     {{ item.final_price }}
-                  </td>
-                  <td class="cart__quantity-td text-right">
+                  </div>
+                  <div class="cart__quantity-td text-right">
                     <div class="cart__qty">
                         <input class="cart__qty-input" type="number" value="{{ item.quantity }}" min="0" pattern="[0-9]*">
                     </div>
-                  </td>
-                  <td class="cart__final-price text-right">                 
+                  </div>
+                  <div class="cart__final-price text-right">                 
                     <div>
                       <span>{{ item.final_line_price }}</span>
                     </div>
-                  </td>
-                </tr>
+                  </div>
+                </div>
             {{/each}}
         `);
         this.getCartItems();
