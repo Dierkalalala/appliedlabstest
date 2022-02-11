@@ -13,6 +13,7 @@ class CartAPI {
 class Cart {
     constructor(props) {
         this.items = [];
+        Handlebars.registerHelper("formatNumber", Cart.formatNumberToPrice);
         this.cartItemMarkUp = Handlebars.compile(`
             {{#each items as | item |}}
                 <div class="cart__row d-flex align-items-center">
@@ -40,7 +41,7 @@ class Cart {
                     </div>
                   </div>
                   <div class="cart__price text-right">
-                    {{ item.final_price }}
+                    {{ formatNumber item.final_price }}
                   </div>
                   <div class="cart__quantity-td text-right">
                     <div class="cart__qty">
@@ -49,7 +50,7 @@ class Cart {
                   </div>
                   <div class="cart__final-price text-right">                 
                     <div>
-                      <span class="js-line-final-price">{{ item.final_line_price }}</span>
+                      <span class="js-line-final-price">{{ formatNumber item.final_line_price }}</span>
                     </div>
                   </div>
                 </div>
