@@ -67,6 +67,10 @@ class Cart {
         })
     }
 
+    static formatNumberToPrice(number) {
+        return (+number).toFixed(0).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    }
+
     static getIndexOfElement(element) {
         let parent = element.closest('.cart__row')
         let wrapper = parent.parentElement;
@@ -116,8 +120,9 @@ class Cart {
         const index = Cart.getIndexOfElement(this)
         Cart.cartChangeRequest(index, +this.value)
             .then(res => {
-                cart.countSubTotal(`${res.data.items_subtotal_price} ${res.data.currency}`)
-                this.closest('.cart__row').querySelector('.js-line-final-price').innerText = res.data.items[index - 1].final_line_price
+                cart.countSubTotal(`${Cart.formatNumberToPrice(res.data.items_subtotal_price)} ${res.data.currency}`)
+                this.closest('.cart__row').querySelector('.js-line-final-price').innerText =
+                    Cart.formatNumberToPrice(res.data.items[index - 1].final_line_price)
             })
             .catch(err => {
                 console.log(err);
@@ -131,7 +136,9 @@ class Cart {
         Cart.cartChangeRequest(index, 0)
             .then(res => {
                 this.closest('.cart__row').remove();
-                cart.countSubTotal(`${res.data.items_subtotal_price} ${res.data.currency}`)
+                cart.countSubTotal(
+                    `${Cart.formatNumberToPrice(res.data.items_subtotal_price)} ${res.data.currency}`
+                )
             })
             .catch(err => {
                 console.log(err)
