@@ -16,7 +16,7 @@ class Cart {
         Handlebars.registerHelper("formatNumber", Cart.formatNumberToPrice);
         this.cartItemMarkUp = Handlebars.compile(`
             {{#each items as | item |}}
-                <div class="cart__row d-flex align-items-center">
+                <div class="cart__row pb-3 mb-3 d-flex align-items-center">
                   <div class="cart__meta small--text-left">
                     <div class="cart__product-information">
                       <div class="cart__image-wrapper">
