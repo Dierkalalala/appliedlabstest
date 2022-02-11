@@ -12,6 +12,7 @@ class CartAPI {
 }
 class Cart {
     constructor(props) {
+        this.cartCountElement = document.querySelector('[data-cart-count]');
         this.items = [];
         Handlebars.registerHelper("formatNumber", Cart.formatNumberToPrice);
         this.cartItemMarkUp = Handlebars.compile(`
@@ -124,6 +125,7 @@ class Cart {
                 cart.countSubTotal(`${Cart.formatNumberToPrice(res.data.items_subtotal_price)} ${res.data.currency}`)
                 this.closest('.cart__row').querySelector('.js-line-final-price').innerText =
                     Cart.formatNumberToPrice(res.data.items[index - 1].final_line_price)
+                cart.cartCountElement.innerText = res.data.item_count
             })
             .catch(err => {
                 console.log(err);
@@ -140,6 +142,7 @@ class Cart {
                 cart.countSubTotal(
                     `${Cart.formatNumberToPrice(res.data.items_subtotal_price)} ${res.data.currency}`
                 )
+                cart.cartCountElement.innerText = res.data.item_count
             })
             .catch(err => {
                 console.log(err)

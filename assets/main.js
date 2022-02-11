@@ -34,7 +34,7 @@ class API {
     }
 }
 (function ProductWorkSpace() {
-    let cartCountElement = document.querySelector('#CartCount');
+    let cartCountElement = document.querySelector('[data-cart-count]');
     let productOptionChanger = document.querySelectorAll('.product__option-wrapper label')
     let optionSelectors = document.querySelectorAll('.js-option-selectors');
     let selectWithAllVariants = document.querySelector('.product-select');
