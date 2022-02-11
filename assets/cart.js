@@ -32,7 +32,7 @@ class Cart {
                   </div>
                   <div class="cart__quantity-td text-right">
                     <div class="cart__qty">
-                        <input class="cart__qty-input js-quantity-changer" type="number" value="{{ item.quantity }}" min="0" pattern="[0-9]*">
+                        <input class="cart__qty-input js-quantity-changer" type="number" value="{{ item.quantity }}" min="1" pattern="[0-9]*">
                     </div>
                   </div>
                   <div class="cart__final-price text-right">                 
@@ -47,6 +47,9 @@ class Cart {
         this.getCartItems();
     }
 
+    cartChangeRequest(line, quantity) {
+        return API.get(`/cart/change?line=${line}&quantity=${quantity}`)
+    }
 
     getCartItems() {
         return API.get('/cart.js')
@@ -80,13 +83,25 @@ class Cart {
 
     }
 
-    changeQuantity() {
+    changeQuantity(event) {
+        event.preventDefault();
         console.log(this)
+        if (+this.value === 0) {
+            let boundRemoveElement = this.removeItem.bind(this);
+            boundRemoveElement();
+        }
     }
 
-    removeItem() {
-        console.log(this)
+    removeItem(event) {
+        event.preventDefault();
+        let parent = this.closest('.cart__row')
+        let wrapper = parent.parentElement;
+        let arrayOfParents = Array.from
+        (wrapper.querySelectorAll('.cart__row'));
+        console.log(arrayOfParents.indexOf(parent));
+
     }
+
 
     placeElements (){
         let cartItemsWrapper = document.querySelector('.cart-items-wrapper');
