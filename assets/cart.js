@@ -61,7 +61,7 @@ class Cart {
     }
 
     static cartChangeRequest(line, quantity) {
-        return CartAPI.post(`/cart/update.js`, {
+        return CartAPI.post(`/cart/change.js`, {
             line,
             quantity
         })
