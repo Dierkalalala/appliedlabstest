@@ -68,7 +68,7 @@ class Cart {
     }
 
     static formatNumberToPrice(number) {
-        return (+number).toFixed(0).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        return (+number).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,').replace('.00', '');
     }
 
     static getIndexOfElement(element) {
