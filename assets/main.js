@@ -34,6 +34,7 @@ class API {
     }
 }
 (function ProductWorkSpace() {
+    let cartCountElement = document.querySelector('#CartCount');
     let productOptionChanger = document.querySelectorAll('.product__option-wrapper label')
     let optionSelectors = document.querySelectorAll('.js-option-selectors');
     let selectWithAllVariants = document.querySelector('.product-select');
@@ -118,6 +119,7 @@ class API {
         })
             .then(res => {
                 _showAddToCartPopUp(res.data)
+                getCart()
             })
             .catch(err => {
                 console.log(err)
@@ -126,7 +128,10 @@ class API {
     function getCart() {
         API.get('/cart.js')
             .then(res => {
-                console.log(res);
+                document.querySelector('[data-cart-popup-cart-quantity]').innerText = res.data.item_count
+                cartCountElement.innerText = res.data.item_count
+                cartCountElement.classList.remove('hide')
+                cartCountElement.classList.remove('critical-hidden')
             })
             .catch(err => {
                 console.log(err);
