@@ -50,9 +50,9 @@ class Cart {
     getCartItems() {
         return API.get('/cart.js')
             .then(res => {
+                let wrapper = document.createElement('div').innerHTML = this.cartItemMarkUp({items: res.data.items})
                 console.log(
-                    (document.createElement('div').innerHTML = this.cartItemMarkUp({items: res.data.items}))
-                        .innerHTML
+                    wrapper.innerHTML
                 )
             })
             .catch(err => {
