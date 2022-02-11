@@ -49,7 +49,7 @@ class Cart {
                   </div>
                   <div class="cart__final-price text-right">                 
                     <div>
-                      <span>{{ item.final_line_price }}</span>
+                      <span class="js-line-final-price">{{ item.final_line_price }}</span>
                     </div>
                   </div>
                 </div>
@@ -114,9 +114,10 @@ class Cart {
             boundRemoveElement();
         }
         const index = Cart.getIndexOfElement(this)
-        Cart.cartChangeRequest(index, this.value)
+        Cart.cartChangeRequest(index, +this.value)
             .then(res => {
-                console.log(res)
+                cart.countSubTotal(`${res.data.items_subtotal_price} ${res.data.currency}`)
+                this.closest('.cart__row').querySelector('.js-line-final-price').innerText = res.data.items[index].final_line_price
             })
             .catch(err => {
                 console.log(err);
@@ -130,7 +131,7 @@ class Cart {
         Cart.cartChangeRequest(index, 0)
             .then(res => {
                 this.closest('.cart__row').remove();
-
+                cart.countSubTotal(`${res.data.items_subtotal_price} ${res.data.currency}`)
             })
             .catch(err => {
                 console.log(err)
