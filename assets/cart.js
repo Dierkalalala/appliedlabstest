@@ -1,3 +1,15 @@
+class CartAPI {
+    constructor() {
+        this.baseUrl = '';
+    }
+    static get(url) {
+        return axios.get(url)
+    }
+
+    static post (url, data) {
+        return axios.post(url, data)
+    }
+}
 class Cart {
     constructor(props) {
         this.items = [];
@@ -48,7 +60,7 @@ class Cart {
     }
 
     static cartChangeRequest(line, quantity) {
-        return API.get(`/cart/change?line=${line}&quantity=${quantity}`)
+        return CartAPI.get(`/cart/change?line=${line}&quantity=${quantity}`)
     }
 
     static getIndexOfElement(element) {
@@ -60,7 +72,7 @@ class Cart {
     }
 
     getCartItems() {
-        return API.get('/cart.js')
+        return CartAPI.get('/cart.js')
             .then(res => {
                 let wrapper = document.createElement('div')
                 wrapper.innerHTML = this.cartItemMarkUp({items: res.data.items})
