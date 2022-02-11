@@ -56,7 +56,7 @@ class Cart {
         let wrapper = parent.parentElement;
         let arrayOfParents = Array.from
         (wrapper.querySelectorAll('.cart__row'));
-        return arrayOfParents.indexOf(parent);
+        return arrayOfParents.indexOf(parent) + 1;
     }
 
     getCartItems() {
